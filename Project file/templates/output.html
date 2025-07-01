@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+       background-image: url("https://cdn.photoroom.com/v2/image-cache?path=gs://background-7ef44.appspot.com/backgrounds_v3/butterfly/18_butterfly.jpg");
+height: 100vh;
+      background-size: cover;
+      background-position: center;
+      
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4fdf7;
+    }
+ 
+    img {
+      width: 300px;
+      margin-top: 20px;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+    }
+
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .confidence {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #1565c0;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .back-link:hover {
+      background-color: #1c6330;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Prediction Result</h1>
+  {% if image_path %}
+    <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image">
+  {% endif %}
+  <div class="result">
+    Predicted butterfly Type: {{ prediction | upper }}
+  </div>
+  <div class="confidence">
+    Confidence: {{ '%.2f'|format(confidence) }}%
+  </div>
+  <a class="back-link" href="/predict">Predict Another</a>
+
+</body>
+</html>

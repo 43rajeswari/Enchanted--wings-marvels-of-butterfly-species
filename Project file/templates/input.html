@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Butterfly</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20;
+     background-image: url("https://t3.ftcdn.net/jpg/06/41/92/40/360_F_641924082_g7VtLS3CtIkph4ooW3AQKHyvQJg64opO.jpg");
+height: 100vh;
+      background-size: cover;
+      background-position: center;
+      
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #080c08;
+    }
+
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input[type="file"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px; /* makes it look like a text box */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .home-link {
+      margin-top: 40px;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #89d4aa;
+      color: rgb(3, 1, 1);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .home-link:hover {
+      background-color: #c8d8e4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Image Classification</h2>
+    <p>Upload an image to predict the type of waste.</p>
+    
+   <form action="/output" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Predict</button>
+</form>
+
+    <a class="home-link" href="/">Back to Home</a>
+  </div>
+
+</body>
+</html>
